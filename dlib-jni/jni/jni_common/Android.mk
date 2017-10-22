@@ -1,17 +1,10 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
-OpenCV_INSTALL_MODULES := on
-OPENCV_CAMERA_MODULES := off
-OPENCV_LIB_TYPE := STATIC
-include $(OPENCV_PATH)/OpenCV.mk
-
 
 LOCAL_MODULE           := jni_common
 $(warning "Build jni_common")
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/..
 LOCAL_C_INCLUDES :=  $(LOCAL_PATH)/..
-LOCAL_C_INCLUDES +=  \
-           $(OPENCV_INCLUDE_DIR)
 
 $(warning $(LOCAL_PATH))
 
