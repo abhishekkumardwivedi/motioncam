@@ -1,6 +1,6 @@
 [submodule "third_party/miniglog"]
-	path = dlib-android/third_party/miniglog
+	path = dlib-jni/third_party/miniglog
 	url = https://github.com/tzutalin/miniglog.git
 [submodule "dlib"]
-	path = dlib-android/dlib
+	path = dlib-jni/dlib
 	url = https://github.com/davisking/dlib.git
