@@ -12,6 +12,13 @@ LOCAL_SRC_FILES += \
                 ../$(LOCAL_PATH)/../dlib/dlib/base64/base64_kernel_1.cpp \
                 ../$(LOCAL_PATH)/../dlib/dlib/threads/threads_kernel_1.cpp \
                 ../$(LOCAL_PATH)/../dlib/dlib/threads/threads_kernel_2.cpp \
+                ../$(LOCAL_PATH)/../dlib/dlib/image_loader/jpeg_loader.cpp \
+                ../$(LOCAL_PATH)/../dlib/dlib/image_saver/save_jpeg.cpp \
+                ../$(LOCAL_PATH)/../dlib/dlib/external/libjpeg/*.cpp \
+
+JPEGLIB_FILES := $(wildcard ../$(LOCAL_PATH)/../dlib/dlib/external/libjpeg/*.cpp)
+LOCAL_SRC_FILES += $(JPEGLIB_FILES:../$(LOCAL_PATH)/%=%)
+#LOCAL_SRC_FILES += $(JPEGLIB_FILES)
 
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_C_INCLUDES)
 include $(BUILD_STATIC_LIBRARY)

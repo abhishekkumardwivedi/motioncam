@@ -31,7 +31,7 @@ android {
     // Use prebilt *.so. Don't run ndk-build
     sourceSets {
         main {
-            jniLibs.srcDirs = ["../../dlib-android/libs"]
+            jniLibs.srcDirs = ["../../dlib-jni/libs"]
         }
     }
 }

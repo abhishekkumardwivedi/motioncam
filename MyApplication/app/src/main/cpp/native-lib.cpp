@@ -1,30 +1,30 @@
 #include <jni.h>
 #include <string>
 
-extern "C"
-JNIEXPORT
+#include <dlib/image_processing.h>
+#include <dlib/image_io.h>
 
-jstring JNICALL
-Java_com_example_abhishek_myapplication_MainActivity_stringFromJNI(
-        JNIEnv *env,
-        jobject /* this */) {
-    std::string hello = "Hello from C++";
-    return env->NewStringUTF(hello.c_str());
-}
+using namespace dlib;
+using namespace std;
 
 extern "C"
 JNIEXPORT
 
 jboolean JNICALL
-Java_com_example_abhishek_myapplication_MainActivity_initTrackingJNI(JNIEnv *env, jobject instance,
-                                                                     jobject bitmap,
-                                                                     jintArray rectangle_) {
-    jint *rectangle = env->GetIntArrayElements(rectangle_, NULL);
+Java_com_example_abhishek_myapplication_MainActivity_initTrackingJNI(JNIEnv *env,
+                                                                     jobject instance,
+                                                                     jobject bitmap//,
+//                                                                     jintArray rectangle_
+                                                                     ) {
+//    jint *rectangle = env->GetIntArrayElements(rectangle_, NULL);
 
     // TODO
 
-    env->ReleaseIntArrayElements(rectangle_, rectangle, 0);
 
+//    env->ReleaseIntArrayElements(rectangle_, rectangle, 0);
+    array2d<unsigned char> img;
+    load_image(img, NULL);
+    correlation_tracker tracker;
     return false;
 }
 

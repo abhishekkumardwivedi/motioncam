@@ -9,7 +9,7 @@ LOCAL_SRC_FILES += \
 	    ../../../MyApplication/app/src/main/cpp/native-lib.cpp
 
 LOCAL_LDLIBS += -lm -llog -ldl -lz -ljnigraphics
-LOCAL_CPPFLAGS += -fexceptions -frtti -std=c++11
+LOCAL_CPPFLAGS += -fexceptions -frtti -std=c++11 -ljpeg -DDLIB_JPEG_SUPPORT
 
 # import dlib
 LOCAL_STATIC_LIBRARIES += dlib \
