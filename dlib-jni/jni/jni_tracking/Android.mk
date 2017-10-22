@@ -13,7 +13,8 @@ LOCAL_CPPFLAGS += -fexceptions -frtti -std=c++11
 
 # import dlib
 LOCAL_STATIC_LIBRARIES += dlib \
-                         jni_common
+
+#                         jni_common
 
 ### import miniglog
 ifeq ($(MINIGLOG_LIB_TYPE),SHARED)
