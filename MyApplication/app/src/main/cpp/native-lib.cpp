@@ -23,7 +23,7 @@ Java_com_example_abhishek_myapplication_MainActivity_initTrackingJNI(JNIEnv *env
 
 //    env->ReleaseIntArrayElements(rectangle_, rectangle, 0);
     array2d<unsigned char> img;
-    load_image(img, NULL);
+//    load_image(img, NULL);
     correlation_tracker tracker;
     return false;
 }

@@ -9,12 +9,10 @@ LOCAL_SRC_FILES += \
 	    ../../../MyApplication/app/src/main/cpp/native-lib.cpp
 
 LOCAL_LDLIBS += -lm -llog -ldl -lz -ljnigraphics
-LOCAL_CPPFLAGS += -fexceptions -frtti -std=c++11 -ljpeg -DDLIB_JPEG_SUPPORT
+LOCAL_CPPFLAGS += -fexceptions -frtti -std=c++11
 
 # import dlib
-LOCAL_STATIC_LIBRARIES += dlib \
-
-#                         jni_common
+LOCAL_STATIC_LIBRARIES += dlib
 
 ### import miniglog
 ifeq ($(MINIGLOG_LIB_TYPE),SHARED)
@@ -23,10 +21,5 @@ else
     LOCAL_STATIC_LIBRARIES += miniglog
 endif
 
-ifeq ($(TARGET_ARCH_ABI), armeabi-v7a)
-    LOCAL_ARM_MODE := arm
-	LOCAL_ARM_NEON := true
-endif
-
-include $(BUILD_SHARED_LIBRARY)
+include $(BUILD_STATIC_LIBRARY)
 #-----------------------------------------------------------------------------
